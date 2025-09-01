@@ -13,7 +13,7 @@ export class BookService{
     async bookSearch(nome){
         return await livro.findOne({nome});
     }
-   async bookReturn(){
+    async bookReturn(){
         const livro=await this.bookSearch(nome);
         if(livro && livro.disponibilidade){
             livro.disponibilidade=true;
