@@ -1,14 +1,14 @@
-function soma(a, b) {
-    return(a + b);
-}
+const CadastroLivro = require("../bookRegister.js");
 
 describe("Initial tests", () =>{
-    it("First test", () =>{
-        const x = 1;
-        const y = 2;
-
-        let result = soma(x, y);
-
-        expect(result).toEqual(3);
+    it("Cadastrar Diário de Um Banana", async () =>{
+        const livro = await CadastroLivro.create ({ 
+            nome: "Diário de Um Banana: Armageddon",
+            exemplares: 3,
+            autor: "Jeff Kinney",
+            ano: 2026
+        })
+        expect(livro.nome).toBe("Cadastrar Diário de Um Banana"); 
+        expect(livro.disponibilidade).toBe(true); 
     })
 })
