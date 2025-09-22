@@ -1,14 +1,20 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import CadastroLivro from "./CadastroLivro.js";
+import { fileURLToPath } from "url"; // Necessário para usar __dirname com ES Modules
+import path from "path"; // Necessário para usar __dirname com ES Modules
+//import CadastroLivro from "./services/bookServices.js";
 
 dotenv.config();
 
 const App = express();
 const PORT = 3000;
+//const fileURLToPath = import("url").fileURLToPath;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename); // Necessário para usar __dirname com ES Modules porque __dirname não funciona nativamente com ES Modules
 
-App.use(express.json());
+App.use(express.json()); //middleware para ler JSON
+App.use(express.urlencoded({ extended: true })); //middleware para ler os dados do forms
 
 const connectDB = async () => {
     try {
@@ -22,14 +28,18 @@ const connectDB = async () => {
 
 connectDB();
 
-App.post("/cadastro", async (req, res) => {
-    try {
-        const novoCadastroLivro = await CadastroLivro.create(req.body);
-        res.json(novoCadastroLivro);
-    }
-    catch(error) {
-        res.send(error)
-    }
+// App.post("/cadastro", async (req, res) => { 
+//     try {
+//         const novoCadastroLivro = await CadastroLivro.create(req.body);
+//         res.json(novoCadastroLivro);
+//     }
+//     catch(error) {
+//         res.send(error)
+//     }
+// })
+
+App.get('/login', (req, res) => {
+    res.sendFile(__dirname + "/login.html");
 })
 
 App.get('/', (req , res) => {

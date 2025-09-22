@@ -1,6 +1,6 @@
-import {livro as livroModel} from "./bookRegister.js"
+import livroModel from "./bookRegister.js"
 
-export class BookService{
+export default class BookService{
     async  bookAdd(nome,exemplares,autor,ano){
         const livro =new livroModel({nome,exemplares,autor,ano})
         const salvamento= await livro.save();
