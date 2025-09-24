@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); // Necessário para usar __dirname com ES Modules porque __dirname não funciona nativamente com ES Modules
 
 App.use(express.json()); //middleware para ler JSON
-App.use(express.urlencoded({ extended: true })); //middleware para ler os dados do forms
+App.use(express.static(__dirname)); //middleware para ler os dados do forms
 
 const connectDB = async () => {
     try {
