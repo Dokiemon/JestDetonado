@@ -11,7 +11,7 @@ export default class BookService{
         return await console.log(livro);
     }
     async bookSearch(nome){
-        return await livro.findOne({nome});
+        return await livroModel.findOne({nome});
     }
     async bookReturn(){
         const livro=await this.bookSearch(nome);
