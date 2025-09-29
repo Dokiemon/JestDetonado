@@ -54,6 +54,7 @@ App.post('/cadastro', async (req, res) => {
     console.log(novoLivro);
     const hadouken = await bookService.bookListing(novoLivro);
     console.log(hadouken);
+    console.log("Se fudeu");
 })
 
 App.get('/', (req , res) => {

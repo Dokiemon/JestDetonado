@@ -1,23 +1,20 @@
-async function exeCadastro() {
-    let username = document.querySelector('.username').value;
-    let password = document.querySelector('.password').value;
-    let email = document.querySelector('.email').value;
+document.querySelector('#cadastroForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const year = document.getElementById('year').value;
 
-    try {
-        const response = await fetch("http://localhost:3000/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                nome: username,
-                senha: password,
-                email: email
-            })
-        });
+    const response = await fetch('/cadastro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nome: title,
+            autor: author,
+            ano: year,
+            exemplares: 1 // ou outro valor conforme necessário
+        })
+    });
 
-        const data = await response.json();
-        alert(data.msg); // mostra mensagem de sucesso ou erro
-    } catch (err) {
-        console.error("Erro no cadastro:", err);
-        alert("Erro ao cadastrar usuário!");
-    }
-}
+    const result = await response.json();
+    document.querySelector('.livro-cadastrado').textContent = 'Livro cadastrado: ' + JSON.stringify(result);
+});
