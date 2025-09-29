@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import BookService from "./services/bookServices.js";
 import { fileURLToPath } from "url"; // Necessário para usar __dirname com ES Modules
 import path from "path"; // Necessário para usar __dirname com ES Modules
-import exeCadastro from "./cadastro.js"
+import exeCadastro from "./signup.js"
 //import CadastroLivro from "./services/bookServices.js";
 
 dotenv.config();
