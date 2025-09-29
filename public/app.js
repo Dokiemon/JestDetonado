@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import BookService from "./services/bookServices.js";
 import { fileURLToPath } from "url"; // Necessário para usar __dirname com ES Modules
 import path from "path"; // Necessário para usar __dirname com ES Modules
+import exeCadastro from "./cadastro.js"
 //import CadastroLivro from "./services/bookServices.js";
 
 dotenv.config();
@@ -30,15 +31,15 @@ const connectDB = async () => {
 
 connectDB();
 
-// App.post("/cadastro", async (req, res) => { 
-//     try {
-//         const novoCadastroLivro = await CadastroLivro.create(req.body);
-//         res.json(novoCadastroLivro);
-//     }
-//     catch(error) {
-//         res.send(error)
-//     }
-// })
+App.post("/register",async(req,res)=>{
+    try{
+        const newUser=await exeCadastro.create(req.body);
+        res.json(newUser);
+    }
+    catch(error){
+        res.status(500).json({msg:"Erro ao cadastrar usuário"});
+    }
+})
 
 App.get('/login', (req, res) => {
     res.sendFile(__dirname + "/login.html");

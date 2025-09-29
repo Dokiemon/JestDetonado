@@ -1,4 +1,4 @@
-async function exeCadastro() {
+export default async function exeCadastro() {
     let username = document.querySelector('.username').value;
     let password = document.querySelector('.password').value;
     let email = document.querySelector('.email').value;
