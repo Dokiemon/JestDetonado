@@ -58,6 +58,16 @@ App.post('/cadastro', async (req, res) => {
     console.log("Se fudeu");
 })
 
+App.get('/biblioteca', (req, res) => {
+    res.sendFile(__dirname + "/biblioteca.html");  
+})
+
+App.post('/biblioteca', async (req, res) => {
+    const listaLivros = await bookService.bookListing();
+    res.json(listaLivros);
+    console.log(listaLivros);
+})
+
 App.get('/', (req , res) => {
     res.send("ALGUEM CHAMA O CAPITÃO");
 })
