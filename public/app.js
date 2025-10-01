@@ -50,12 +50,16 @@ App.get('/cadastro', (req, res) => {
 })
 
 App.post('/cadastro', async (req, res) => {
-    const novoLivro = await bookService.bookAdd(req.body.nome, req.body.exemplares, req.body.autor, req.body.ano);
-    res.json(novoLivro);
-    console.log(novoLivro);
-    const hadouken = await bookService.bookListing(novoLivro);
-    console.log(hadouken);
-    console.log("Se fudeu");
+    try{
+        const novoLivro = await bookService.bookAdd(req.body.nome, req.body.exemplares, req.body.autor, req.body.ano);
+        res.json(novoLivro);
+        console.log(novoLivro);
+        const hadouken = await bookService.bookListing(novoLivro);
+        console.log(hadouken);
+    }
+    catch(error){
+        console.log("NN Funcionou");
+    }
 })
 
 App.get('/biblioteca', (req, res) => {

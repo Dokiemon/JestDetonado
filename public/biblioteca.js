@@ -1,5 +1,5 @@
 async function carregarLivros() {
-    async function carregarLivros() {
+    console.log("Chegou na função carregarLivros");
         const response = await fetch('/biblioteca', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
@@ -10,6 +10,7 @@ async function carregarLivros() {
             // Tenta ler como JSON, se falhar, mantém array vazio
             console.log("Tentando ler resposta como JSON...");
             livros = await response.json();
+            console.log("Chegou no try");
         } catch (e) {
             livros = [];
             console.error("Erro ao ler a resposta como JSON:", e);
@@ -24,7 +25,10 @@ async function carregarLivros() {
     }
 
     window.onload = carregarLivros;
-}
 
 // Chame a função quando a página carregar
-window.onload = carregarLivros;
+
+window.onload = function() {
+    carregarLivros();
+    console.log("É pra ter a biblioteca");
+}
