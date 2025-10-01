@@ -1,1 +1,43 @@
-/* teste */
+html, body{
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    --dark-gray: rgb(9, 12, 15);
+    --middle-gray: rgb(64, 74, 77);
+}
+
+body{
+    background-color: var(--middle-gray);
+}
+
+#livrosContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-auto-rows: 450px; /* 425px */
+    gap: 20px;
+}
+
+.livro_espaco {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 25px 25px 12.5px 12.5px 25px;
+}
+
+.livro{
+    background-color: var(--dark-gray);
+    border-radius: 25px;
+    grid-area: 1 / 1 / 6 / 2;
+}
+
+.livro_info {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.detalhe_1{
+    grid-area: 2 / 1 / 4 / 2;
+    background-color: white;
+}

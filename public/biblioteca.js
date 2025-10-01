@@ -18,9 +18,45 @@ async function carregarLivros() {
         const livrosContainer = document.getElementById('livrosContainer');
         livrosContainer.innerHTML = '';
         livros.forEach(livro => {
+            const livroEspacoDiv = document.createElement('div');
+            livroEspacoDiv.classList.add('livro_espaco');
+
             const livroDiv = document.createElement('div');
-            livroDiv.textContent = `Título: ${livro.nome}, Autor: ${livro.autor}, Ano: ${livro.ano}, Exemplares: ${livro.exemplares}`;
-            livrosContainer.appendChild(livroDiv);
+            livroDiv.classList.add('livro');
+
+            const livroInfoDiv = document.createElement('div');
+            livroInfoDiv.classList.add('livro_info');
+
+            const tituloDiv = document.createElement('div');
+            tituloDiv.classList.add('livro_titulo');
+            tituloDiv.innerText = livro.nome;
+            livroInfoDiv.appendChild(tituloDiv);
+
+            const autorDiv = document.createElement('div');
+            autorDiv.classList.add('livro_autor');
+            autorDiv.innerText = livro.autor;
+            livroInfoDiv.appendChild(autorDiv);
+
+            const anoDiv = document.createElement('div');
+            anoDiv.classList.add('livro_ano');
+            anoDiv.innerText = livro.ano;
+            livroInfoDiv.appendChild(anoDiv);
+
+            const exemplaresDiv = document.createElement('div');
+            exemplaresDiv.classList.add('livro_exemplares');
+            exemplaresDiv.innerText = livro.exemplares;
+
+            const detalhe_1 = document.createElement('div');
+            detalhe_1.classList.add('detalhe_1');
+            const detalhe_2 = document.createElement('div');
+            detalhe_2.classList.add('detalhe_2');
+
+            livrosContainer.appendChild(livroEspacoDiv);
+            livroEspacoDiv.appendChild(livroDiv);
+            livroEspacoDiv.appendChild(livroInfoDiv);
+            livroEspacoDiv.appendChild(detalhe_1);
+            livroEspacoDiv.appendChild(detalhe_2);
+            livroEspacoDiv.appendChild(exemplaresDiv);
         });
     }
 
