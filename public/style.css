@@ -18,7 +18,7 @@
 }
 
 html, body{
-    min-height: 100%;
+    min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -36,8 +36,10 @@ body{
     background-color: var(--light-gray);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
 
 h1{
@@ -100,10 +102,6 @@ h1{
     text-align: center;
 }
 
-.livro_autor{
-    
-}
-
 .detalhe_1{
     box-sizing: border-box;
     grid-area: 2 / 1 / 4 / 2;
@@ -143,4 +141,58 @@ body::-webkit-scrollbar-thumb {
     background: var(--dark-gray);
     border-radius: 10px 0 0 10px;
     background-clip: padding-box;
+}
+
+.link_button {
+    position: fixed;
+    top: 15px;
+    left: 60px;
+    z-index: 1000;
+    background: var(--dark-blue);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.link_button:hover {
+    background: var(--middle-gray);
+}
+
+#cadastroForm {
+    display: grid;
+    width: 75vw;
+    height: 65vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 2fr 2fr 2fr 3fr 1.5fr;
+    margin: auto;
+    background-color: var(--middle-gray);
+    border-radius: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    color: var(--white);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    justify-items: center;
+    align-items: center;
+}
+
+#cadastroForm *{
+    background-color: var(--dark-gray);
+    height: 100%;
+    width: 100%;
+}
+
+#cadastroForm label{
+    text-align: center;
+}
+
+#cadastroForm input{
+    color: black;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
 }

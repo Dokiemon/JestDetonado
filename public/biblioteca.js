@@ -17,6 +17,10 @@ async function carregarLivros() {
         }
         const livrosContainer = document.getElementById('livrosContainer');
         livrosContainer.innerHTML = '';
+        // const linkCadastro = document.createElement('div');
+        // linkCadastro.classList.add('link_cadastro');
+        // linkCadastro.innerText = 'Cadastrar Livro';
+        // livrosContainer.appendChild(linkCadastro);
         livros.forEach(livro => {
             const livroEspacoDiv = document.createElement('div');
             livroEspacoDiv.classList.add('livro_espaco');

@@ -16,5 +16,5 @@ document.querySelector('#cadastroForm').addEventListener('submit', async functio
     });
 
     const result = await response.json();
-    document.querySelector('.livro-cadastrado').textContent = 'Livro cadastrado: ' + JSON.stringify(result);
+    document.querySelector('.livro-cadastrado').textContent = 'Livro cadastrado!' /*'Livro cadastrado: ' + JSON.stringify(result)*/;
 });
