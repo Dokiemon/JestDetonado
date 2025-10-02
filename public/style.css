@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.roboto-font {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.quicksand-font {
+  font-family: 'Quicksand', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 html, body{
     min-height: 100%;
     width: 100%;
@@ -7,37 +26,121 @@ html, body{
 
 html{
     --dark-gray: rgb(9, 12, 15);
-    --middle-gray: rgb(64, 74, 77);
+    --middle-gray: rgb(30, 44, 53);
+    --light-gray: rgb(64, 74, 77);
+    --white: rgb(181, 223, 219);
+    --dark-blue: rgb(7, 35, 156);
 }
 
 body{
-    background-color: var(--middle-gray);
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    margin: 0 0 20px 0;
+    border-radius: 0 0 50px 50px;
+    color: var(--white);
+    background-color: var(--dark-gray);
+    width: 50%;
+    padding: 10px 30px;
 }
 
 #livrosContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
-    grid-auto-rows: 450px; /* 425px */
-    gap: 20px;
+    grid-auto-rows: 462.5px; /* 425px */
+    justify-content: center;
+    justify-items: center;
+    gap: 30px;
+    width: 95vw;
 }
 
 .livro_espaco {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 25px 25px 12.5px 12.5px 25px;
+    grid-template-rows: 350px 25px 25px 12.5px 12.5px 37.5px;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--middle-gray);
+    border-radius: 35px;
 }
 
 .livro{
     background-color: var(--dark-gray);
     border-radius: 25px;
-    grid-area: 1 / 1 / 6 / 2;
+    grid-area: 1 / 1 / 5 / 2;
 }
 
 .livro_info {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--white);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 6fr 1fr 1fr;
     grid-area: 1 / 1 / 2 / 2;
+    box-sizing: border-box;
+    padding: 12.5px;
+}
+
+.livro_titulo{
+    font-weight: 700;
+    font-size: 22.5px;
+    margin: 0;
+    text-align: center;
+}
+
+.livro_autor{
+    
 }
 
 .detalhe_1{
+    box-sizing: border-box;
     grid-area: 2 / 1 / 4 / 2;
-    background-color: white;
+    background-color: var(--white);
+    margin: 0px 12.5px;
+    border-radius: 18.75px 0 18.75px 18.75px;
+}
+
+.detalhe_2{
+    display: flex;
+    background-color: var(--dark-blue);
+    grid-area: 3 / 1 / 6 / 2;
+    width: 35px;
+    margin-left: 35px;
+}
+
+.livro_exemplares{
+    text-justify: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: var(--white);
+    height: 25px;
+    align-self: center;
+    background-color: var(--dark-gray);
+    border-radius: 12.5px;
+    padding: 4px 22.5px 0 22.5px;
+    margin: 0 12.5px 0 12.5px;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: var(--middle-gray);
+    border-radius: 10px 0 0 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--dark-gray);
+    border-radius: 10px 0 0 10px;
+    background-clip: padding-box;
 }

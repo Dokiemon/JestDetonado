@@ -44,7 +44,7 @@ async function carregarLivros() {
 
             const exemplaresDiv = document.createElement('div');
             exemplaresDiv.classList.add('livro_exemplares');
-            exemplaresDiv.innerText = livro.exemplares;
+            exemplaresDiv.innerText = 'Exemplares: ' + livro.exemplares;
 
             const detalhe_1 = document.createElement('div');
             detalhe_1.classList.add('detalhe_1');
