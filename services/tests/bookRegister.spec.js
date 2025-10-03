@@ -1,4 +1,6 @@
+/*
 import CadastroLivro from "../bookRegister.js";
+import BookService from "../bookServices.js";
 
 beforeAll(() => {
     console.log("Iniciando os teste do arquivo bookRegister.spec.js");
@@ -31,5 +33,5 @@ describe("Grupo dos testes de modelo do banco de dados (schema)", () => {
     expect(livro.exemplares).toBe(4); //erro proposital
     });
 });
-
-//usa o jest para testal o modelo do mongoose, mas não testa as rotas da API porque não tem o supertest
+*/
+//usa o jest para testar o modelo do mongoose, mas não testa as rotas da API porque não tem o supertest

@@ -31,24 +31,28 @@ const connectDB = async () => {
 
 connectDB();
 
-App.post("/register",async(req,res)=>{
-    try{
-        const newUser=await exeCadastro.create(req.body);
-        res.json(newUser);
-    }
-    catch(error){
-        res.status(500).json({msg:"Erro ao cadastrar usuário"});
-    }
-})
+/* ignore as rotas login e register*/
+// App.post("/register",async(req,res)=>{
+//     try{
+//         const newUser=await exeCadastro.create(req.body);
+//         res.json(newUser);
+//     }
+//     catch(error){
+//         res.status(500).json({msg:"Erro ao cadastrar usuário"});
+//     }
+// })
 
-App.get('/login', (req, res) => {
-    res.sendFile(__dirname + "/public/login.html");
-})
+// App.get('/login', (req, res) => {
+//     res.sendFile(__dirname + "/public/login.html");
+// })
 
+/*
 App.get('/cadastro', (req, res) => {
     res.sendFile(__dirname + "/public/cadastro.html");
 })
+*/
 
+/*
 App.post('/cadastro', async (req, res) => {
     try{
         const novoLivro = await bookService.bookAdd(req.body.nome, req.body.exemplares, req.body.autor, req.body.ano);
@@ -61,23 +65,35 @@ App.post('/cadastro', async (req, res) => {
         console.log("NN Funcionou");
     }
 })
+*/
 
+/*
 App.get('/biblioteca', (req, res) => {
     res.sendFile(__dirname + "/public/biblioteca.html");  
 })
+*/
 
-App.post('/biblioteca', async (req, res) => {
-    const listaLivros = await bookService.bookListing();
-    res.json(listaLivros);
-    console.log(listaLivros);
+/*
+App.get('/api/livros', async (req, res) => {
+    try {
+        const listaLivros = await bookService.bookListing();
+        res.json(listaLivros);
+        console.log('Livros listados:', listaLivros.length);
+    } catch (error) {
+        console.error('Erro ao listar livros:', error);
+        res.status(500).json({ error: 'Erro interno do servidor' });
+    }
 })
+*/
 
 App.get('/', (req , res) => {
     res.send(__dirname + "/public/index.html");
 })
 
-App.listen(PORT, ()=>{
-    console.log("Servidor conectado na porta: "+ PORT);
-})
+if (process.env.NODE_ENV !== 'test') {
+    App.listen(PORT, () => {
+        console.log("Servidor conectado na porta: " + PORT);
+    })
+}
 
 export default App;

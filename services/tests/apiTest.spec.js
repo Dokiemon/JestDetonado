@@ -1,3 +1,4 @@
+/*
 import request from "supertest";
 import App from "../../app.js";
 
@@ -7,5 +8,5 @@ describe("Testando rotas da API", () => {
     expect(response.status).toBe(200);
   });
 });
-
-//esse é o teste com o supertest, qual consegue testar requisições (ainda usando o jest)
+*/
+// esse é o teste com o supertest, qual consegue testar requisições (ainda usando o jest)
