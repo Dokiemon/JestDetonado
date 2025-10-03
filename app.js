@@ -73,9 +73,11 @@ App.post('/biblioteca', async (req, res) => {
 })
 
 App.get('/', (req , res) => {
-    res.send("ALGUEM CHAMA O CAPITÃO");
+    res.send(__dirname + "/public/index.html");
 })
 
 App.listen(PORT, ()=>{
     console.log("Servidor conectado na porta: "+ PORT);
 })
+
+export default App;
