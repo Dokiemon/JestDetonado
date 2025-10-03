@@ -1,7 +1,7 @@
 async function carregarLivros() {
     console.log("Chegou na função carregarLivros");
-        const response = await fetch('/biblioteca', {
-            method: 'POST',
+        const response = await fetch('/api/livros', {
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });
 
