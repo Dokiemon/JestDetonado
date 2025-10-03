@@ -144,10 +144,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .link_button {
-    position: fixed;
-    top: 15px;
-    left: 60px;
-    z-index: 1000;
     background: var(--dark-blue);
     color: var(--white);
     padding: 15px 30px;
@@ -156,6 +152,13 @@ body::-webkit-scrollbar-thumb {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     transition: background 0.2s;
+}
+
+.link_button.fixed {
+    position: fixed;
+    top: 15px;
+    left: 60px;
+    z-index: 1000;
 }
 
 .link_button:hover {
@@ -253,4 +256,18 @@ body::-webkit-scrollbar-thumb {
 input[type="number"] {
     appearance: textfield;
     -moz-appearance: textfield;
+}
+
+.botoes_home {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-size: 30px;
 }
